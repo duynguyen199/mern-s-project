@@ -2,7 +2,7 @@
 // Sample Eslint config for Node.js project
 module.exports = {
   env: { browser: true, es2020: true, node: true },
-  extends: [ 'eslint:recommended' ],
+  extends: ['eslint:recommended'],
   parser: '@babel/eslint-parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module', allowImportExportEverywhere: true },
   settings: { react: { version: '18.2' } },
@@ -12,9 +12,9 @@ module.exports = {
     'react-refresh'
   ],
   rules: {
-    'react-refresh/only-export-components':'warn',
-    'react-hooks/rules-of-hooks':'error',
-    'react-hooks/exhaustive-deps':'warn',
+    'react-refresh/only-export-components': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'no-console': 1,
     'no-lonely-if': 1,
     'no-unused-vars': 1,
@@ -32,6 +32,12 @@ module.exports = {
     'keyword-spacing': 1,
     'comma-dangle': 1,
     'comma-spacing': 1,
-    'arrow-spacing': 1
+    'arrow-spacing': 1,
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*"]
+      }
+    ]
   }
 }
