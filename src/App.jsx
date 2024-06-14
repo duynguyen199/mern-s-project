@@ -1,14 +1,11 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import React from 'react';
 
-export default function App() {
+function App() {
   return (
-<>
-<div>
-  abbbbcckqkjsdxas
-</div>
-</>
+    <div>
+      <h1>Hello, World!</h1>
+    </div>
   );
 }
+
+export default App;
