@@ -8,7 +8,7 @@ useColorScheme;
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
-import theme from "./theme";
+import theme from "../../theme";
 
 const ModeToggle = () => {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
