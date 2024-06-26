@@ -32,7 +32,7 @@ const DarkLightMode = () => {
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl sx={{ m: 1, minWidth: 120}} size="small">
       <InputLabel id="label-select-light-dark-mode">Mode</InputLabel>
       <Select
         labelId="label-select-light-dark-mode"
