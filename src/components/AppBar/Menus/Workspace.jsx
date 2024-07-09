@@ -9,7 +9,7 @@ import ContentCut from "@mui/icons-material/ContentCut"
 import ContentCopy from "@mui/icons-material/ContentCopy"
 import ContentPaste from "@mui/icons-material/ContentPaste"
 import Cloud from "@mui/icons-material/Cloud"
-import { Button, Menu } from "@mui/material"
+import { Button, Menu,Box } from "@mui/material"
 
 function Workspace() {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -21,8 +21,9 @@ function Workspace() {
     setAnchorEl(null)
   };
   return (
-    <div>
+    <Box >
       <Button
+        sx={{color:"white"}}
         id="button-menu-workspace"
         aria-controls={open ? "basic-menu-workspaces" : undefined}
         aria-haspopup="true"
@@ -83,7 +84,7 @@ function Workspace() {
         </MenuItem>
       </Menu>
 
-    </div>
+    </Box>
   )
 }
 

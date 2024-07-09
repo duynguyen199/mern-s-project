@@ -15,13 +15,13 @@ import BoltIcon from "@mui/icons-material/Bolt";
 import { FilterList } from "@mui/icons-material";
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 const MENU_STYLE = {
-  color: "primary.main",
-  backgroundColor: "white",
+  color: "white",
+  backgroundColor: "transparent",
   border: "none",
   paddingX: "5px",
   borderRadius: "4px",
-  "& .MuiSvgIcon-root": {
-    color: "primary.main",
+  ".MuiSvgIcon-root": {
+    color: "white",
   },
   "&:hover": {
     bgcolor: "primary.50",
@@ -39,7 +39,9 @@ export default function BoardBar() {
         justifyContent: "space-between",
         gap: 2,
         overflowX: "auto",
-        borderTop: "1px solid #00bfa5",
+        borderBottom: "1px solid #00bfa5",
+        bgcolor: (theme) =>
+          (theme.palette.mode === "dark" ? "#218c74" : "#33d9b2")
       }}
     >
       <Box
@@ -99,14 +101,28 @@ export default function BoardBar() {
           gap: 2,
         }}
       >
-        <Button startIcon={<PersonAddIcon/>} variant="outlined">Invite</Button>
+        <Button 
+        startIcon={<PersonAddIcon/>} 
+        sx={{
+          color:"white",
+          borderColor:"white",
+          "&:hover":{
+            border:'white'
+          }
+        }}
+        variant="outlined">Invite</Button>
 
         <AvatarGroup max={4}
             sx={{
+              gap:"10px",
               '& .MuiAvatar-root':{
                 width:"34px",
                 height:"34px",
-                fontSize:"16px"
+                fontSize:"16px",
+                border:"none",
+                color:"white",
+                cursor:'pointer',
+                '&:first-of-type':{bgcolor:"#a4b0de"}
               }
             }}
         >

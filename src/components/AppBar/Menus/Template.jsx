@@ -24,12 +24,12 @@ function Template() {
   return (
     <div>
       <Button
+        sx={{color:"white"}}
         id="button-menu-template"
         aria-controls={open ? "basic-menu-template" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        sx={{ color: theme=> theme.colorSchemes}}
         endIcon={<ExpandMoreIcon/>}
       >
        Template
