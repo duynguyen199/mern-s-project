@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DarkLightMode from "../ModeSelect";
+import DarkLightMode from "../ModeSelect/ModeSelect";
 import { ReactComponent as TrelloIcon } from "~/assets/trello.svg";
 import {
   Box,
