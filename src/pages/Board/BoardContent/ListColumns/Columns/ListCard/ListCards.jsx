@@ -7,9 +7,8 @@ import { Attachment, Comment, Group } from "@mui/icons-material";
 import { Box, Typography, Button } from "@mui/material";
 import CardComponent from "./Card/CardComponent";
 
-
-function ListCards() {
-
+function ListCards(props) {
+  const { cards } = props;
   return (
     <Box
       sx={{
@@ -35,21 +34,9 @@ function ListCards() {
         },
       }}
     >
-    <CardComponent/>
-      <Card
-        sx={{
-          cursor: "pointer",
-          boxShadow: "0 1px 1px rgba(0,0,0,0.2)",
-          overflow: "unset",
-        }}
-      >
-        <CardActionArea>
-          <CardContent sx={{ p: 1.5, "&:last-child": { p: 1.5 } }}>
-            <Typography>Card 01</Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-
+      {cards?.map((card) => (
+        <CardComponent key={card._id} card ={card } />
+      ))}
     </Box>
   );
 }

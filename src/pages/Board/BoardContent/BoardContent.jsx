@@ -3,8 +3,9 @@ import ListColumns from "./ListColumns/ListColumns";
 import { Box } from "@mui/material";
 
 
-export default function BoardContent() {
+export default function BoardContent(props) {
 
+  const {board} = props
   return (
     <div>
       <Box
@@ -16,7 +17,7 @@ export default function BoardContent() {
           p:'10px 0'
         }}
       >
-        <ListColumns/>
+        <ListColumns columns ={board?.columns}/>
       </Box>
     </div>
   );

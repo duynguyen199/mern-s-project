@@ -26,8 +26,11 @@ const MENU_STYLE = {
   "&:hover": {
     bgcolor: "primary.50",
   },
-};
-export default function BoardBar() {
+}
+
+import { capitalizeFirstLetter } from "~/ultis/formatter";
+export default function BoardBar(props) {
+  const {board} = props
   return (
     <Box
       px={2}
@@ -54,14 +57,14 @@ export default function BoardBar() {
         <Chip
           sx={MENU_STYLE}
           icon={<DashboardIcon />}
-          label="duynguyen"
+          label={ board?.title}
           clickable="true"
           variant="outlined"
         />
         <Chip
           sx={MENU_STYLE}
           icon={<WorkspacesIcon />}
-          label="Public/Private Workspace"
+          label={capitalizeFirstLetter( board?.type)}
           clickable="true"
           variant="outlined"
         />

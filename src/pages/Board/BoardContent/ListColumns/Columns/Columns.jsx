@@ -17,7 +17,8 @@ import {
 } from "@mui/icons-material";
 import ListCards from "./ListCard/ListCards";
 
-function Columns() {
+function Columns(props) {
+  const column= props.column
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -61,7 +62,7 @@ function Columns() {
             cursor: "pointer",
           }}
         >
-          Column Title
+          {column?.title}
         </Typography>
         <Box>
           <Tooltip title="More options">
@@ -136,7 +137,7 @@ function Columns() {
         </Box>
       </Box>
       {/* List card */}
-        <ListCards/>
+        <ListCards cards = {column?.cards}/>
       {/* Footer */}
       <Box
         sx={{

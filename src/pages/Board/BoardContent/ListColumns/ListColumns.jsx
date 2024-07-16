@@ -4,7 +4,8 @@ import { Box, Button } from "@mui/material";
 import Columns from "./Columns/Columns";
 import { NoteAdd } from "@mui/icons-material";
 
-function ListColumns() {
+function ListColumns(props) {
+  const {columns}= props
   return (
     <Box
       sx={{
@@ -18,8 +19,8 @@ function ListColumns() {
         },
       }}
     >
+      {columns?.map(column=>(<Columns key={column._id} column={column} />))}
       {/*columns 01*/}
-      <Columns />
       <Box
         sx={{
           minWidth: "200px",
