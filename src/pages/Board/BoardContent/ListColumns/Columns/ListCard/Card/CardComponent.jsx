@@ -8,6 +8,13 @@ import { Box, Typography, Button } from "@mui/material";
 
 function CardComponent(props) {
   const { card } = props;
+  const shouldShowCardAction = () => {
+    return (
+      !!card?.memberIds?.length ||
+      !!card?.comments?.length ||
+      !!card?.attachments?.length
+    );
+  };
   return (
     <Card
       sx={{
@@ -24,19 +31,25 @@ function CardComponent(props) {
         <CardContent sx={{ p: 1.5, "&:last-child": { p: 1.5 } }}>
           <Typography>{card?.title}</Typography>
         </CardContent>
-        <CardActions sx={{ p: "0 4px 8px 4px" }}>
-
-          {!!card?.memberIds?.length}
-          <Button size="small" startIcon={<Group />}>
-            20
-          </Button>
-          <Button size="small" startIcon={<Comment />}>
-            10
-          </Button>
-          <Button size="small" startIcon={<Attachment />}>
-            15
-          </Button>
-        </CardActions>
+        {shouldShowCardAction() && (
+          <CardActions sx={{ p: "0 4px 8px 4px" }}>
+            {!!card?.memberIds?.length && (
+              <Button size="small" startIcon={<Group />}>
+                {card?.memberIds?.length}
+              </Button>
+            )}
+            {!!card?.comments?.length && (
+              <Button size="small" startIcon={<Comment />}>
+                {!!card?.comments?.length}
+              </Button>
+            )}
+            {!!card?.attachments?.length && (
+              <Button size="small" startIcon={<Attachment />}>
+                {!!card?.attachments?.length}
+              </Button>
+            )}
+          </CardActions>
+        )}
       </CardActionArea>
     </Card>
   );

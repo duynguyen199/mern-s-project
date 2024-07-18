@@ -16,6 +16,8 @@ import {
   Group,
 } from "@mui/icons-material";
 import ListCards from "./ListCard/ListCards";
+import { mapOrder } from "~/ultis/sort";
+
 
 function Columns(props) {
   const column= props.column
@@ -27,6 +29,8 @@ function Columns(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const orderedCards = mapOrder(column?.cards, column?.cardOrderIds,'_id' )
   return (
     <Box
       sx={{
@@ -137,7 +141,7 @@ function Columns(props) {
         </Box>
       </Box>
       {/* List card */}
-        <ListCards cards = {column?.cards}/>
+        <ListCards cards = {orderedCards}/>
       {/* Footer */}
       <Box
         sx={{
